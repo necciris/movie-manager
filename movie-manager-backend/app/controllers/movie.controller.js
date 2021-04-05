@@ -10,6 +10,18 @@ export const getMovies = (req, res) => {
     });
 };
 
+export const getMoviesById = (req, res) => {
+    const id = req.params.id;
+
+    Movie.findById(id, (err, data) => {
+        if (err) {
+            res.status(500).send({ message: err });
+            return;
+        }
+        res.status(200).send(data);
+    });
+};
+
 export const createMovie = (req, res) => {
     const movie = req.body;
 

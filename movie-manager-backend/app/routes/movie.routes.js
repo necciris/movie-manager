@@ -1,4 +1,4 @@
-import { createMovie, getMovies, updateMovie, deleteMovie } from '../controllers/movie.controller.js';
+import { createMovie, getMovies, updateMovie, deleteMovie, getMoviesById } from '../controllers/movie.controller.js';
 import authJwt from '../middleware/authJwt.js';
 
 const movieRoutes = function (app) {
@@ -8,6 +8,8 @@ const movieRoutes = function (app) {
     });
 
     app.get('/api/movies', getMovies);
+
+    app.get('/api/movies/:id', getMoviesById);
 
     app.post('/api/movies', [authJwt.verifyToken], createMovie);
 

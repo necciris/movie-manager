@@ -13,6 +13,6 @@ db.user = User;
 db.role = Role;
 db.movie = Movie;
 
-db.ROLES = ['MANAGER', 'TEAMLEADER', 'FLOORSTAFF'];
+db.ROLES = ['USER', 'MANAGER', 'TEAMLEADER', 'FLOORSTAFF'];
 
 export default db;
